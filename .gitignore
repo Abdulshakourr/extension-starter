@@ -34,7 +34,6 @@ jspm_packages/
 out/
 
 # Tailwind CSS
-tailwind.config.js
 
 # Webpack
 dist/

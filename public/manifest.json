@@ -1,12 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Tab Manager for Chrome Dev Docs",
+  "name": "iKeep",
   "version": "1.0",
+  "description": "iKeep a simple extension to manage your passwords",
   "background": {
     "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon3.png",
+    "48": "images/icon2.png",
+    "128": "images/icon.png"
   },
   "action": {
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
   "permissions": ["activeTab"]
 }

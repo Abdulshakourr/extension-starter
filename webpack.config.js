@@ -5,12 +5,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    popup: "./src/popup.jsx",
+    popup: "./src/Popup.jsx",
     background: "./src/background.jsx",
+    content: "./src/content.jsx",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
@@ -27,6 +31,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },
